@@ -1,0 +1,17 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: donaton_db_dev
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: donaton_db
+      MYSQL_USER: donaton
+      MYSQL_PASSWORD: donaton2025
+      MYSQL_ROOT_PASSWORD: root2025
+    volumes:
+      - donaton_db_data:/var/lib/mysql
+
+volumes:
+  donaton_db_data:
